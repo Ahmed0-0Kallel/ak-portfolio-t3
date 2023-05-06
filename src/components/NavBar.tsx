@@ -55,7 +55,9 @@ export default function Navbar() {
         )}
       >
         <NavItem title="Home" href="/" />
-        <NavItem title="Blog" href="/blog" />
+        <NavItem title="About" href="/about" />
+        <NavItem title="Experience" href="/experience" />
+        <NavItem title="Contact" href="/contact" />
         </div>
 
         <div className="space-x-4 flex flex-row float-right items-center">

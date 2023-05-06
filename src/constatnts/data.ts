@@ -7,34 +7,38 @@ const userData = {
     location: "Budapest, HU",
     projectDescription: "My portfolio Website",
     projects: [
-      // {
-      //   title: "Illawarra",
-      //   link: "https://illawarratherapies.com.au",
-      //   imgUrl: "/illawarra.jpg",
-      // },
     ],
     about: {
       title:
-        "Full stack developer with 7+ years of experience building scalable web applications and internal tools that drastically improve efficiency.",
+        "Computer Science Engineering Student | ChatBot Developer at Occamonics Ltd",
       description: [
-        "I have worked on a large range of projects and developed strong skills in software engineering by delivering applications for native platforms and web. In the past decade I worked with entrepreneurs and small to medium sized businesses.",
-        "I am Full-Stack Developer — my front-end and back-end expertise come together, essentially covering the full stack of technology for a project. Well versed with Front-End Tools like HTML, CSS, JavaScript; Back-End technologies and infrastructure: NodeJS, Express, NestJS, Fastify.",
+        "I am a software developer based in Budapest. Currently, going through my final semester at Budapest University of Technology and Economics.",
+        "I am a fullstack developer with major interest in Blockchain technologies. I focus on Backend development at my current role at Occamonics Ltd as a Chatbot Developer. ",
       ]
     },
     experience: [
       {
-        title: "Supervisory Controls and Data Acquisition Engineer",
-        company: "Tesco Controls",
-        year: "2021",
-        companyLink: "https://tescocontrols.com",
-        description: "Functioned as the technical lead on projects of medium to large scale. Provided mentoring and training of junior staff. Designed complex systems for operating manufacturing processes and water/wastewater facilities, collecting data in real-time and alarming based on certain conditions",
+        title: "Chatbot Developer",
+        company: "Occamonics Ltd",
+        duration: "Sep 2022 - Present",
+        companyLink: "https://occamonics.com/",
+        description: "I specialize in Oracle Digital Assistant (ODA) services and implementations for Human Capital Management (HCM) solutions. I work with a variety of technologies, including JavaScript, Node.js, Freemarker, Langchain, GPT-4, Azure, and Docker. I help Occamonics clients develop and deploy chatbots that are efficient, scalable, and effective at engaging users.",
+      },
+
+      {
+        title: "Technical Consultant",
+        company: "Aximmetry Technologies",
+        duration: "Sep 2020 - Oct 2022",
+        companyLink: "https://aximmetry.com/",
+        description: "As a Technical Consultant at Aximmetry Technologies, I demonstrated expertise in their software and broadcasting technologies. I effectively communicated with customers to identify and resolve issues, while also providing on-site installation, configuration, and training for the Aximmetry platform.",
       }
 
 
     ],
     socialLinks: {
-      linkedin: "https://linkedin.com/in/dstolbov",
-      github: "https://github.com/goosewin",
+      linkedin: "https://linkedin.com/in/ahmedkallel-/",
+      github: "https://github.com/Ahmed0-0Kallel",
+      youtube: "https://www.youtube.com/@AhmedKallel"
     },
   };
   
