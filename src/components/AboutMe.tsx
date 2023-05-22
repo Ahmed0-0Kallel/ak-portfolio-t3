@@ -31,13 +31,8 @@ function IconLink({
 
 export default function AboutMe() {
     return (
-        <div className='flex flex-col  grow items-center justify-center'>
-
-
-
-            <div className="absolute -z-10 h-screen w-screen overflow-hidden">
-                <div className="invisible absolute top-[50vh] left-[50vw] -z-10 h-5/6 w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 skew-y-6 rounded-full bg-transparent bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-neutral-400 via-neutral-900 to-neutral-900 opacity-20 blur-3xl motion-safe:animate-light-up dark:visible xl:w-5/6 " />
-            </div>
+        <div className='flex flex-col grow items-center justify-center '>
+            
             <div
                 className={cn(
                     inter700.className, '',
@@ -47,21 +42,17 @@ export default function AboutMe() {
                 About Me
             </div>
 
-            <div className="bg-transparent dark:bg-opacity-5 dark:bg-[#161616] items-center justify-center">
+          
 
-                <div className="mx-auto bg-gradient-to-b from-black rounded-full w-80 h-80 relative overflow-hidden mt-10 md:h-96 md:w-96">
+                <div className="mx-auto bg-gradient-to-b from-black rounded-full w-80 h-80 relative overflow-hidden mt-10 md:h-96 md:w-96 animate-fadeIn">
                     <Image alt='avatar' src={userData.avatarUrl} fill={true} style={{ objectFit: "cover" }} />
                 </div>
-            </div>
-            
-                    
-            <div
-             
-                className=" mt-6 max-w-prose  text-base text-black dark:text-neutral-300 sm:text-l"
-            >
+          
+
+
+            <div className=" mt-6 max-w-prose  text-base text-black dark:text-neutral-300 sm:text-l animate-fadeIn">
                 {userData.about.description}
             </div>
-
             <div
                 className={cn(
                     inter300.className, '',
@@ -70,7 +61,7 @@ export default function AboutMe() {
             >
                 My Stack
             </div>
-            <div className="flex flex-row flex-wrap mt-8 gap-2 bg-transparent p-4 rounded ">
+            <div className="flex flex-row flex-wrap mt-8 gap-2 bg-transparent p-4 rounded animate-fadeIn">
                 {/* <IconLink
                       href={userData.socialLinks.linkedin}
                       Icon={CPlusPlusIcon}

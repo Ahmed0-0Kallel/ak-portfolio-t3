@@ -24,7 +24,13 @@ const userData = {
         companyLink: "https://occamonics.com/",
         description: "I specialize in Oracle Digital Assistant (ODA) services and implementations for Human Capital Management (HCM) solutions. I work with a variety of technologies, including JavaScript, Node.js, Freemarker, Langchain, GPT-4, Azure, and Docker. I help Occamonics clients develop and deploy chatbots that are efficient, scalable, and effective at engaging users.",
       },
-
+      {
+        title: "Software Engineering Intern",
+        company: "Aximmetry Technologies",
+        duration: "Jul 2021 - Sep 2021",
+        companyLink: "https://aximmetry.com/",
+        description: "Developed a partial solution that allows Aximmetry software users to use their Android phones as a camera. Technologies used: React Native and .NET Framework (UDP server).",
+      },
       {
         title: "Technical Consultant",
         company: "Aximmetry Technologies",

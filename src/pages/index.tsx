@@ -79,8 +79,7 @@ const Home: NextPage = () => {
                     as="div"
                     className="mt-6 w-0 min-w-full text-base text-black dark:text-neutral-300 sm:text-xl"
                   >
-                    Software engineer seeking full-time, full-stack opportunities.
-                    Looking to improve the lives of developers and users alike.
+                    Final year computer science student. Working as a chatbot developer. Interested in fullstack and blockchain development.
                   </Balancer>
                   {/*<Stats className="mt-6 w-0 min-w-full text-xs text-black dark:text-neutral-400 sm:text-sm" />*/}
                   <div className="mt-8 flex flex-row items-center gap-3 text-sm text-black dark:text-neutral-400">
