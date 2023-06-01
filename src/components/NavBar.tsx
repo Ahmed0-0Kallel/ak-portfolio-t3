@@ -1,20 +1,16 @@
-import { useTheme } from "next-themes";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import userData from "../constatnts/data";
-import cn from "classnames";
-
-
-
-
+import { useTheme } from "next-themes"; // Importing the useTheme hook from next-themes library
+import Link from "next/link"; // Importing the Link component from Next.js
+import { useRouter } from "next/router"; // Importing the useRouter hook from Next.js
+import { useEffect, useState } from "react"; // Importing the useEffect and useState hooks from React
+import userData from "../constatnts/data"; // Importing the userData from the constants/data module
+import cn from "classnames"; // Importing the classnames library
 
 export default function Navbar() {
-  const router = useRouter();
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const router = useRouter(); // Initializing the useRouter hook
+  const { theme, setTheme } = useTheme(); // Initializing the useTheme hook and extracting the theme and setTheme functions
+  const [mounted, setMounted] = useState(false); // Initializing the useState hook with mounted state variable
   useEffect(() => {
-    setMounted(true);
+    setMounted(true); // Setting the mounted state variable to true after component mount
   }, []);
 
   function NavItem({
@@ -102,6 +98,7 @@ export default function Navbar() {
             className="w-10 h-10 p-3 rounded focus:outline-none"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >
+            {/* Toggle Dark Mode Button */}
             {mounted && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import {  Pagination } from "swiper";
 import userData from "../constatnts/data";
 
-
+//Will be extended in the future
 
 const TravelGallery: React.FC = () => {
     return (

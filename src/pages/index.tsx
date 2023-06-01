@@ -10,7 +10,42 @@ import Navbar from "../components/NavBar";
 import Layout from "../components/Layout";
 import { GitHubIcon, LinkedInIcon, RightChevronIcon, YouTubeIcon } from "../components/Icons"
 import Footer from "../components/Footer";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
+// Define interface for GithubCommit object
+interface GithubCommit {
+  name:string
+  sha: string;
+  commit: {
+    author: {
+      date: string;
+    };
+  };
+}
+
+
+// Function to get the last commit for a given GitHub repo
+const getLastCommit = async (repoOwner: string, repoName: string) => {
+  try {
+    const response = await axios.get(
+      `https://api.github.com/repos/${repoOwner}/${repoName}/commits`
+    );
+
+    let lastCommit = response.data[0];
+    lastCommit = { ...lastCommit, name: repoName };
+    console.log(lastCommit)
+    return lastCommit;
+  } catch (error) {
+    console.error('Error fetching last commit:', error);
+    return null;
+  }
+};
+
+
+
+
+// IconLink component for rendering external link icons
 function IconLink({
   Icon,
   href,
@@ -33,8 +68,20 @@ function IconLink({
   );
 }
 
+// Home component for the main page
 
 const Home: NextPage = () => {
+  const [lastCommit, setLastCommit] = useState<GithubCommit | null>(null);
+
+  useEffect(() => {
+    const fetchLastCommit = async () => {
+      const commit = await getLastCommit('ahmedkall', 'ak-portfolio-t3');
+      console.log(commit)
+      setLastCommit(commit);
+    };
+
+    fetchLastCommit();
+  }, []);
 
   return (
     <>
@@ -42,10 +89,9 @@ const Home: NextPage = () => {
         <title>{userData.name}</title>
         <meta name="description" content={userData.projectDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/*<link rel="icon" href={userData.avatarUrl} />*/}
       </Head>
       <div className="relative">
-        
+      // Background gradient
         <div className="absolute -z-10 h-screen w-screen overflow-hidden">
           <div className="invisible absolute top-[50vh] left-[50vw] -z-10 h-5/6 w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 skew-y-6 rounded-full bg-transparent bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-neutral-400 via-neutral-900 to-neutral-900 opacity-20 blur-3xl motion-safe:animate-light-up dark:visible xl:w-5/6 " />
         </div>
@@ -81,7 +127,14 @@ const Home: NextPage = () => {
                   >
                     Final year computer science student. Working as a chatbot developer. Interested in fullstack and blockchain development.
                   </Balancer>
-                  {/*<Stats className="mt-6 w-0 min-w-full text-xs text-black dark:text-neutral-400 sm:text-sm" />*/}
+                    // Display last commit information if available
+                    {lastCommit && (
+                      <div className="flex h-8 max-w-2xl flex-row gap-2 xs:h-full my-2">
+                        <GitHubIcon className="inline h-4 w-4 flex-shrink-0 sm:m-[0.125rem]" />
+                        Pushed {lastCommit.sha.slice(0, 7)} to {lastCommit.name}{' '}
+                        {`${Math.floor((Date.now() - new Date(lastCommit.commit.author.date).getTime()) / (1000 * 60 * 60))} hours ago`}
+                      </div>
+                    )}
                   <div className="mt-8 flex flex-row items-center gap-3 text-sm text-black dark:text-neutral-400">
                     <IconLink
                       href={userData.socialLinks.github}
@@ -104,24 +157,17 @@ const Home: NextPage = () => {
                     </Link>
                   </div>
                 </div>
-
               </div>
-
-
-
             </Layout>
-
-
           </div>
-          <Footer/>
-
+          <Footer />
         </div>
-
-
       </div>
-
     </>
   );
 };
+
+
+
 
 export default Home;
