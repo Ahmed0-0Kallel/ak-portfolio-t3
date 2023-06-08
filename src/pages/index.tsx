@@ -13,6 +13,35 @@ import Footer from "../components/Footer";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
+
+
+
+
+
+// IconLink component for rendering external link icons
+function IconLink({
+  Icon,
+  href,
+  className,
+}: {
+  Icon: React.FC<{ className?: string }>;
+  href: string;
+  className?: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className={cn(
+        "flex flex-row items-center gap-2 dark:hover:bg-transparent dark:hover:text-white",
+        className
+      )}
+    >
+      <Icon className="m-1 inline h-6 w-6" />
+    </Link>
+  );
+}
+
+
 // Define interface for GithubCommit object
 interface GithubCommit {
   name:string
@@ -42,32 +71,6 @@ const getLastCommit = async (repoOwner: string, repoName: string) => {
   }
 };
 
-
-
-
-// IconLink component for rendering external link icons
-function IconLink({
-  Icon,
-  href,
-  className,
-}: {
-  Icon: React.FC<{ className?: string }>;
-  href: string;
-  className?: string;
-}) {
-  return (
-    <Link
-      href={href}
-      className={cn(
-        "flex flex-row items-center gap-2 dark:hover:bg-transparent dark:hover:text-white",
-        className
-      )}
-    >
-      <Icon className="m-1 inline h-6 w-6" />
-    </Link>
-  );
-}
-
 // Home component for the main page
 
 const Home: NextPage = () => {
@@ -91,7 +94,7 @@ const Home: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className="relative">
-      // Background gradient
+      {/* Background gradient*/}
         <div className="absolute -z-10 h-screen w-screen overflow-hidden">
           <div className="invisible absolute top-[50vh] left-[50vw] -z-10 h-5/6 w-full -translate-x-1/2 -translate-y-1/2 -rotate-45 skew-y-6 rounded-full bg-transparent bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-neutral-400 via-neutral-900 to-neutral-900 opacity-20 blur-3xl motion-safe:animate-light-up dark:visible xl:w-5/6 " />
         </div>
@@ -127,7 +130,7 @@ const Home: NextPage = () => {
                   >
                     Final year computer science student. Working as a chatbot developer. Interested in fullstack and blockchain development.
                   </Balancer>
-                    // Display last commit information if available
+                    {/* Display last commit information if available*/}
                     {lastCommit && (
                       <div className="flex h-8 max-w-2xl flex-row gap-2 xs:h-full my-2">
                         <GitHubIcon className="inline h-4 w-4 flex-shrink-0 sm:m-[0.125rem]" />

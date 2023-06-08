@@ -2,7 +2,7 @@ const userData = {
     githubUsername: "ahmed0-0kallel",
     name: "Ahmed Kallel",
     designation: "Software Engineer",
-    avatarUrl: "/avatar.png",
+    avatarUrl: "/avatar.webp",
     email: "contactahmedkallel0@gmail.com",
     location: "Budapest, HU",
     projectDescription: "My portfolio Website",
